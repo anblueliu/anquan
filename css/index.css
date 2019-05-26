@@ -80,7 +80,7 @@ body {
 .item-content {
     display: flex;
     align-items: center;
-    /* width: 960px; */
+    width: 976px;
     box-shadow: 0 0 5px #04101d;
     margin-top: 10px;
     border-radius: 5px;
@@ -105,7 +105,7 @@ body {
 }
 
 .base {
-    width: 960px;
+    width: 976px;
     border-radius: 5px;
     background-color: #fff;
     color: #000;
@@ -116,7 +116,7 @@ body {
 .detection,
 .company,
 .material {
-    width: 920px;
+    width: 936px;
     border-radius: 5px;
     background-color: #fff;
     color: #000;
@@ -259,4 +259,30 @@ body {
 
 .show {
     display: none;
+}
+.item-content-result,.item-content-result1{
+    box-shadow: 0 0 5px #04101d;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    padding-top: 15px;
+    color: #000;
+    cursor: pointer;
+    padding-bottom: 1px;
+    width: 976px;
+}
+.item-content-a{
+    margin-left: 20px;
+    margin-bottom: 15px;
+    color: #04101d;
+    font-size: 18px;
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.result-header{
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 25px;
 }

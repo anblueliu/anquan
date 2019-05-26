@@ -195,3 +195,194 @@ var info = [{
         address:'吉林省吉林（中国-新加坡）食品工业园区（长春大街与海王路交汇处）',
     }
 }]
+
+
+
+var swiper = new Swiper('.swiper-container', {
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+    },
+    autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+    },
+    loop: true,
+});
+swiper.el.onmouseover = function() {
+    swiper.autoplay.stop();
+}
+swiper.el.onmouseout = function() {
+    swiper.autoplay.start();
+}
+
+
+// console.log(info);
+var btnform = document.querySelector('#btnform');
+var show = document.querySelector('.show');
+
+var detailimage = document.querySelector('#detailimage');
+var detailname = document.querySelector('#detailname');
+var detailbrand = document.querySelector('#detailbrand');
+var detailspecifications = document.querySelector('#detailspecifications');
+var detailshelflife = document.querySelector('#detailshelflife');
+var detailbatch = document.querySelector('#detailbatch');
+var detaildate = document.querySelector('#detaildate');
+var detailbarcode = document.querySelector('#detailbarcode');
+var detailstandard = document.querySelector('#detailstandard');
+
+var detectiondate = document.querySelector('#detectiondate');
+var detectionpeople = document.querySelector('#detectionpeople');
+var detectioninstitution = document.querySelector('#detectioninstitution');
+var detectiongist = document.querySelector('#detectiongist');
+var detectionresult = document.querySelector('#detectionresult');
+var detectionconclusion = document.querySelector('#detectionconclusion');
+
+var companyname = document.querySelector('#companyname');
+var companyscope = document.querySelector('#companyscope');
+var companylicense = document.querySelector('#companylicense');
+var companyphone = document.querySelector('#companyphone');
+var companyaddress = document.querySelector('#companyaddress');
+
+var swiperWrapper = document.querySelector('.swiper-wrapper');
+var company = document.querySelector('.company');
+var detection = document.querySelector('.detection');
+// 是否存在此产品
+var ifexist = 0;
+// 查询事件
+btnform.addEventListener('click', function() {
+    show.style.display = 'none';
+    company.style.display = 'none';
+    detection.style.display = 'none';
+    swiper.removeAllSlides();
+    var barcodeVal = document.querySelector('#barcode').value;
+    var batch = document.querySelector('#batch').value;
+    console.log(barcodeVal);
+    for (var i = 0; i < info.length; i++) {
+        if (batch == info[i].detail.batch) {
+            company.style.display = 'block';
+            detection.style.display = 'block';
+        }
+        // 判断批条形码是否正确
+        if (barcodeVal == info[i].detail.barcode) {
+            // 判断批次号是否正确
+            if (batch != info[i].detail.batch && batch != '') {
+                layui.use('layer', function() {
+                    var layer = layui.layer;
+                    console.log(batch);
+                    layer.msg('请正确输入批次号!');
+                });
+            }
+            ifexist = 1;
+
+            show.style.display = 'block';
+            detailimage.src = info[i].detail.image;
+            detailname.innerHTML = '产品名称:' + info[i].detail.name;
+            detailbrand.innerHTML = '产品品牌:' + info[i].detail.brand;
+            detailspecifications.innerHTML = '产品规格:' + info[i].detail.specifications;
+            detailshelflife.innerHTML = '保质期:' + info[i].detail.shelflife;
+            detailbatch.innerHTML = '产品批次:' + info[i].detail.batch;
+            detaildate.innerHTML = '生成日期:' + info[i].detail.date;
+            detailbarcode.innerHTML = '产品条码:' + info[i].detail.barcode;
+            detailstandard.innerHTML = '执行标准:' + info[i].detail.standard;
+            detectiondate.innerHTML = '' + info[i].detection.date;
+            detectionpeople.innerHTML = '' + info[i].detection.people;
+            detectioninstitution.innerHTML = '' + info[i].detection.institution;
+            detectiongist.innerHTML = '' + info[i].detection.gist;
+            detectionresult.innerHTML = '' + info[i].detection.result;
+            detectionconclusion.innerHTML = '' + info[i].detection.conclusion;
+            companyname.innerHTML = '企业名称:' + info[i].company.name;
+            companyscope.innerHTML = '经营范围:' + info[i].company.scope;
+            companylicense.innerHTML = '营业制造号:' + info[i].company.license;
+            companyphone.innerHTML = '联系电话:' + info[i].company.phone;
+            companyaddress.innerHTML = '企业地址:' + info[i].company.address;
+            var slide = 0;
+            if (info[i].material.length % 2 == 1) {
+                slide = Math.ceil(info[i].material.length / 2) - 1;
+                console.log("slide" + slide)
+
+            } else {
+                slide = Math.ceil(info[i].material.length / 2);
+                console.log("slide" + slide)
+            }
+            swiperWrapper.innerHTML = ''
+                // 添加原辅料
+            for (var j = 0; j < slide; j++) {
+                console.log("slide" + slide)
+                swiper.appendSlide('<div class="swiper-slide">'
+
+                    +
+                    '<div class="material-item">' +
+                    '<div class="material-item-img">' +
+                    '<img src="' +
+                    info[i].material[j * 2].image +
+                    '" alt="" class="materialimage">' +
+                    '</div>' +
+                    '<div class="material-item-info">' +
+                    '<div class="item materialname">名称:' + info[i].material[j * 2].name + '</div>' +
+                    '<div class="item materialspecies">种类:' + info[i].material[j * 2].species + '</div>' +
+                    '<div class="item materialspecifications">规定:' + info[i].material[j * 2].specifications + '</div>' +
+                    '<div class="item materialshelflife">保质期:' + info[i].material[j * 2].shelflife + '</div>' +
+                    '<div class="item materialstandard">执行标准号:' + info[i].material[j * 2].standard + '</div>' +
+                    '</div>' +
+                    '</div>'
+
+                    +
+                    '<div class="material-item">' +
+                    '<div class="material-item-img">' +
+                    '<img src="' +
+                    info[i].material[j * 2 + 1].image +
+                    '" alt="" class="materialimage">' +
+                    '</div>' +
+                    '<div class="material-item-info">' +
+                    '<div class="item materialname">名称:' + info[i].material[j * 2 + 1].name + '</div>' +
+                    '<div class="item materialspecies">种类:' + info[i].material[j * 2 + 1].species + '</div>' +
+                    '<div class="item materialspecifications">规定:' + info[i].material[j * 2 + 1].specifications + '</div>' +
+                    '<div class="item materialshelflife">保质期:' + info[i].material[j * 2 + 1].shelflife + '</div>' +
+                    '<div class="item materialstandard">执行标准号:' + info[i].material[j * 2 + 1].standard + '</div>' +
+                    '</div>' +
+                    '</div>'
+
+                    +
+                    '</div>');
+
+            }
+
+            var materialLength = info[i].material.length - 1
+            if (info[i].material.length % 2 == 1) {
+                swiper.appendSlide('<div class="swiper-slide">'
+
+                    +
+                    '<div class="material-item">' +
+                    '<div class="material-item-img">' +
+                    '<img src="' +
+                    info[i].material[info[i].material.length - 1].image +
+                    '" alt="" class="materialimage">' +
+                    '</div>' +
+                    '<div class="material-item-info">' +
+                    '<div class="item materialname">名称:' + info[i].material[materialLength].name + '</div>' +
+                    '<div class="item materialspecies">种类:' + info[i].material[materialLength].species + '</div>' +
+                    '<div class="item materialspecifications">规定:' + info[i].material[materialLength].specifications + '</div>' +
+                    '<div class="item materialshelflife">保质期:' + info[i].material[materialLength].shelflife + '</div>' +
+                    '<div class="item materialstandard">执行标准号:' + info[i].material[materialLength].standard + '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>')
+            }
+
+
+        }
+    }
+
+    // 判断是否存在商品,没有则显示
+    if (ifexist == 0) {
+        layui.use('layer', function() {
+            var layer = layui.layer;
+
+            layer.msg('请正确输入条形码!');
+        });
+    }
+
+    ifexist = 0;
+})
