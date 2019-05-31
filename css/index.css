@@ -260,7 +260,9 @@ body {
 .show {
     display: none;
 }
-.item-content-result,.item-content-result1{
+
+.item-content-result,
+.item-content-result1 {
     box-shadow: 0 0 5px #04101d;
     margin-top: 10px;
     border-radius: 5px;
@@ -271,18 +273,30 @@ body {
     padding-bottom: 1px;
     width: 976px;
 }
-.item-content-a{
+
+.item-content-a {
     margin-left: 20px;
     margin-bottom: 15px;
     color: #04101d;
     font-size: 18px;
-    overflow:hidden; 
-    text-overflow:ellipsis;
-    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-.result-header{
+
+.result-header {
     margin-bottom: 15px;
     font-size: 20px;
     font-weight: 600;
     margin-left: 25px;
+}
+
+.advice {
+    float: right;
+    border: 1px solid;
+    padding: 2px 20px;
+    margin-top: 11px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }

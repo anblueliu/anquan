@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>追溯查询</title>
+    <title>公众安全追溯查询</title>
     <link rel="stylesheet" href="./public/dist/css/layui.css">
     <link rel="stylesheet" href="./public/dist/css/swiper.min.css">
 
@@ -153,23 +153,23 @@
 
                         </div>
                         -->
-                         <!-- 产品溯源 -->
+                        <!-- 产品溯源 -->
                         <div class="result-one">
                             <div class="item-content">
-                                    <div class="layui-form-item">
-                                        <label class="layui-form-label">输入条形码</label>
-                                        <div class="layui-input-block">
-                                            <input type="text" name="title" required lay-verify="required" placeholder="请输入条形码" autocomplete="off" class="layui-input" id='barcode'>
-                                        </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">输入条形码</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="title" required lay-verify="required" placeholder="请输入条形码" autocomplete="off" class="layui-input" id='barcode'>
                                     </div>
-                                    <div class="layui-form-item">
-    
-                                        <label class="layui-form-label">输入批次号</label>
-                                        <div class="layui-input-block">
-                                            <input type="text" name="title" required lay-verify="required" placeholder="请输入批次号" autocomplete="off" class="layui-input" id='batch'>
-                                        </div>
+                                </div>
+                                <div class="layui-form-item">
+
+                                    <label class="layui-form-label">输入批次号</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="title" required lay-verify="required" placeholder="请输入批次号" autocomplete="off" class="layui-input" id='batch'>
                                     </div>
-                                    <button class="layui-btn layui-btn-normal" id='btnform'>
+                                </div>
+                                <button class="layui-btn layui-btn-normal" id='btnform'>
                                             <i class="layui-icon layui-icon-search"></i> 查询
                                     </button>
                             </div>
@@ -178,97 +178,97 @@
                             </div>
 
                             <div class="show">
-                                    <div class="product">
-                                        <div class="base">
-                                            <div class="title">产品基本信息</div>
-                                            <div class="product-content">
-                                                <div class="lt">
-                                                    <div class="product-img">
-                                                        <img src="" alt="" id="detailimage">
-                                                    </div>
-                                                </div>
-                                                <div class="cr">
-    
-                                                    <div class="item" id='detailbatch'>
-                                                        产品批次:20190117
-                                                    </div>
-                                                    <div class="item" id='detailshelflife'>
-                                                        保质期:12个月
-                                                    </div>
-                                                    <div class="item" id='detailname'>
-                                                        产品名称:玉米糊
-                                                    </div>
-                                                    <div class="item" id='detailbrand'>
-                                                        产品品牌:明双
-                                                    </div>
-    
-                                                </div>
-                                                <div class="rt">
-                                                    <div class="item" id='detailspecifications'>
-                                                        产品规格:400g/袋
-                                                    </div>
-                                                    <div class="item" id='detailbarcode'>
-                                                        产品条码:6970376800525
-                                                    </div>
-                                                    <div class="item" id='detailstandard'>
-                                                        执行标准:Q/JLMX0050s-2017
-                                                    </div>
-                                                    <div class="item" id='detaildate'>
-                                                        生成日期:2019-01-17
-                                                    </div>
+                                <div class="product">
+                                    <div class="base">
+                                        <div class="title">产品基本信息</div>
+                                        <div class="product-content">
+                                            <div class="lt">
+                                                <div class="product-img">
+                                                    <img src="" alt="" id="detailimage">
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="detection">
-                                            <div class="title">产品检测信息</div>
-                                            <table class="layui-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>检测日期</th>
-                                                        <th>检测人员</th>
-                                                        <th>检测机构</th>
-                                                        <th>检测依据</th>
-                                                        <th>检测项目和结果</th>
-                                                        <th>检测结论</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td id='detectiondate'>2019-01-17</td>
-                                                        <td id='detectionpeople'>明兴农业</td>
-                                                        <td id='detectioninstitution'>明兴</td>
-                                                        <td id='detectiongist'>企业标准</td>
-                                                        <td id='detectionresult'>外观色泽:正常</td>
-                                                        <td id='detectionconclusion'>合格</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-    
-                                        <div class="material">
-                                            <div class="title">原辅料信息</div>
-                                            <div class="swiper-container">
-                                                <div class="swiper-wrapper">
-                                                    <div class="swiper-slide">
-                                                    </div>
-    
+                                            <div class="cr">
+
+                                                <div class="item" id='detailbatch'>
+                                                    产品批次:20190117
                                                 </div>
-                                                <div class="swiper-pagination"></div>
-    
+                                                <div class="item" id='detailshelflife'>
+                                                    保质期:12个月
+                                                </div>
+                                                <div class="item" id='detailname'>
+                                                    产品名称:玉米糊
+                                                </div>
+                                                <div class="item" id='detailbrand'>
+                                                    产品品牌:明双
+                                                </div>
+
                                             </div>
-                                        </div>
-                                        <div class="company">
-                                            <div class="title">生产企业信息</div>
-                                            <div class="company-content">
-                                                <div class="item" id="companyname">企业名称:吉林明兴农产品有限公司</div>
-                                                <div class="item" id="companyscope">经营范围:粮食加工品,其他粮食加工品</div>
-                                                <div class="item" id="companylicense">营业制造号:91220221673343120A</div>
-                                                <div class="item" id="companyphone">联系电话:18686300456</div>
-                                                <div class="item" id="companyaddress">企业地址:吉林省吉林(中国-新加坡)食品工业园区</div>
+                                            <div class="rt">
+                                                <div class="item" id='detailspecifications'>
+                                                    产品规格:400g/袋
+                                                </div>
+                                                <div class="item" id='detailbarcode'>
+                                                    产品条码:6970376800525
+                                                </div>
+                                                <div class="item" id='detailstandard'>
+                                                    执行标准:Q/JLMX0050s-2017
+                                                </div>
+                                                <div class="item" id='detaildate'>
+                                                    生成日期:2019-01-17
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="detection">
+                                        <div class="title">产品检测信息</div>
+                                        <table class="layui-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>检测日期</th>
+                                                    <th>检测人员</th>
+                                                    <th>检测机构</th>
+                                                    <th>检测依据</th>
+                                                    <th>检测项目和结果</th>
+                                                    <th>检测结论</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td id='detectiondate'>2019-01-17</td>
+                                                    <td id='detectionpeople'>明兴农业</td>
+                                                    <td id='detectioninstitution'>明兴</td>
+                                                    <td id='detectiongist'>企业标准</td>
+                                                    <td id='detectionresult'>外观色泽:正常</td>
+                                                    <td id='detectionconclusion'>合格</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="material">
+                                        <div class="title">原辅料信息</div>
+                                        <div class="swiper-container">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                </div>
+
+                                            </div>
+                                            <div class="swiper-pagination"></div>
+
+                                        </div>
+                                    </div>
+                                    <div class="company">
+                                        <div class="title">生产企业信息</div>
+                                        <div class="company-content">
+                                            <div class="item" id="companyname">企业名称:吉林明兴农产品有限公司</div>
+                                            <div class="item" id="companyscope">经营范围:粮食加工品,其他粮食加工品</div>
+                                            <div class="item" id="companylicense">营业制造号:91220221673343120A</div>
+                                            <div class="item" id="companyphone">联系电话:18686300456</div>
+                                            <div class="item" id="companyaddress">企业地址:吉林省吉林(中国-新加坡)食品工业园区</div>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
 
 
                         </div>
@@ -290,21 +290,11 @@
                             <div class="item-content-result">
                                 <div class="result-header">查询结果</div>
                             </div>
+                            <div class="advice">建议</div>
                         </div>
-                        
 
-                        <div class="advice">
-                            <div class="select-header">建议投诉</div>
-                            
-                            <div class="select-con">
-                                <div class="select-title">
-                                    <input type="text" name="" id="">
-                                </div>
-                                <div class="select-content">
-                                    <textarea type="text" name="" id="">
-                                </div>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -326,28 +316,28 @@
             $ = layui.$,
             layer = layui.layer,
             carousel = layui.carousel;
-        var elem=0;
-        document.querySelector('.select-title').addEventListener('click',function(){
-            getInformation();
-        })
-        // 获取数据接口
-        function getInformation(){
+        var elem = 0;
+        document.querySelector('.select-title').addEventListener('click', function() {
+                getInformation();
+            })
+            // 获取数据接口
+        function getInformation() {
             var title = document.querySelector('.selecttitle').value;
             var elemCon = document.querySelector('.item-content-result');
             $.ajax({
                 type: 'GET',
                 url: 'http://47.98.167.96:9527/gzaqzs/getInformation',
                 data: {
-                    title:title,
+                    title: title,
                     newsType: elem
                 },
                 success: function(data) {
                     console.log(data)
-                    elemCon.innerHTML='<div class="result-header">查询结果</div>';
-                    for(var i=0;i<data.data.content.length;i++){
-                        elemCon.innerHTML += '<div class="item-content-a" data-id="'+data.data.content[i].id+'">'+(i+1)+'、'+data.data.content[i].title+'</div>'
+                    elemCon.innerHTML = '<div class="result-header">查询结果</div>';
+                    for (var i = 0; i < data.data.content.length; i++) {
+                        elemCon.innerHTML += '<div class="item-content-a" data-id="' + data.data.content[i].id + '">' + (i + 1) + '、' + data.data.content[i].title + '</div>'
                     }
-                    document.querySelector('.item-content-a').addEventListener('click',function(){
+                    document.querySelector('.item-content-a').addEventListener('click', function() {
                         window.location.href = "./src/detail.html";
                     })
                 },
@@ -357,25 +347,29 @@
         //监听切换
         element.on('tab(test1)', function(tt) {
             elem = String(tt.index);
-            if(elem==7){
-                elem=13
+            if (elem == 7) {
+                elem = 13
             }
-            if(elem>0){
-                document.querySelector('.result').style.display='block';
-                document.querySelector('.result-one').style.display='none';
-            }else{
-                document.querySelector('.result-one').style.display='block';
-                document.querySelector('.result').style.display='none';
+            if (elem > 0) {
+                document.querySelector('.result').style.display = 'block';
+                document.querySelector('.result-one').style.display = 'none';
+            } else {
+                document.querySelector('.result-one').style.display = 'block';
+                document.querySelector('.result').style.display = 'none';
             }
             console.log(elem);
             getInformation()
 
         });
 
+
+        $(".advice").click(function() {
+            window.location.href = "./src/advice.html";
+        })
+
     });
 </script>
 <script>
-    
 </script>
 
 </html>
