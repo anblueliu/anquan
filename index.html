@@ -290,10 +290,11 @@
                             <div class="item-content-result">
                                 <div class="result-header">查询结果</div>
                             </div>
-                            <div class="advice">建议</div>
                         </div>
 
-
+                        <div class="btn">
+                            <div class="advice">建议</div>
+                        </div>
 
                     </div>
                 </div>
@@ -344,15 +345,20 @@
                 error: function(jqXHR) {}
             });
         }
+        
         //监听切换
         element.on('tab(test1)', function(tt) {
             elem = String(tt.index);
             if (elem == 7) {
-                elem = 13
+                elem = 13;
+                // document.querySelector('.btn').innerHTML = '<div class="advice">建议</div>';
             }
             if (elem > 0) {
                 document.querySelector('.result').style.display = 'block';
                 document.querySelector('.result-one').style.display = 'none';
+                // document.querySelector('.advice').style.display = 'none';
+                // document.querySelector('.btn').innerHTML = '';
+
             } else {
                 document.querySelector('.result-one').style.display = 'block';
                 document.querySelector('.result').style.display = 'none';
